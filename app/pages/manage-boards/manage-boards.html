@@ -1,0 +1,17 @@
+<ion-navbar *navbar class="hide-border">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Manage Boards</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+	<!-- <button [disabled]="myBoard" (click)="onCreateBoard()" primary block>Create board</button>
+	<button [disabled]="!myBoard" (click)="onEditBoard()" primary block>Edit board</button>
+	<button [disabled]="!myBoard" (click)="onCreateNotice()" primary block>Create notice</button>
+	<button [disabled]="!myBoard" (click)="onManageNotice()" primary block>Manage notices</button> -->
+	<button *ngIf="myBoard" (click)="onCreateBoard()" primary block>Create board</button>
+	<button *ngIf="!myBoard" (click)="onEditBoard()" primary block>Edit board</button>
+	<button *ngIf="!myBoard" (click)="onCreateNotice()" primary block>Create post</button>
+	<button *ngIf="!myBoard" (click)="onManageNotice()" primary block>Manage posts</button>
+</ion-content>
